@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Family Tree</title>
+  <title>Organization Chart</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/treant-js@1.0/Treant.css">
   <style>
     #tree-container {
@@ -10,82 +10,120 @@
       height: auto;
       overflow-x: auto;
     }
-    .node-name {
-      font-weight: bold;
-      color: #2c3e50;
-    }
     .nodeExample1 {
-      padding: 5px 10px;
-      background: #ecf0f1;
-      border: 1px solid #bdc3c7;
+      padding: 10px;
       border-radius: 8px;
     }
   </style>
 </head>
 <body>
-<div class"Container">
-	<div id="tree-container"></div>
-</div>
 
-
+<h2 class="text-center">Company Org Chart</h2>
+<div id="tree-container"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/treant-js@1.0/Treant.min.js"></script>
 
 <script>
-  const treeData = {
+  const chart_config = {
     chart: {
       container: "#tree-container",
-      rootOrientation: "NORTH",
-      nodeAlign: "BOTTOM",
       connectors: {
         type: "step",
         style: {
           "stroke-width": 2,
-          "stroke": "#34495e"
+          "stroke": "#777"
         }
       },
       node: {
         HTMLclass: "nodeExample1"
       }
     },
+
     nodeStructure: {
-      text: { name: "Lê Thành Công + Hạnh Phúc" },
+      image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/1.jpg",
+      text: {
+        name: "Mark Hill",
+        title: "Chief Executive Officer",
+        contact: "Tel: 01 213 123 134"
+      },
       children: [
         {
-          text: { name: "Lê Đại Giai" },
+          text: {
+            name: "Joe Linux",
+            title: "Chief Technology Officer"
+          },
+          image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/2.jpg",
           children: [
-            { text: { name: "Lê Văn Nhất" } },
-            { text: { name: "Nguyễn Thị Định" } },
-            { text: { name: "Lê Văn Khoa" } }
+            {
+              text: {
+                name: "Ron Blomquist",
+                title: "Chief Information Security Officer"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/5.jpg"
+            },
+            {
+              text: {
+                name: "Michael Rubin",
+                title: "Chief Innovation Officer",
+                contact: "we@aregreat.com"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/6.jpg"
+            }
           ]
         },
         {
-          text: { name: "Lê Thị Phú" },
+          text: {
+            name: "Linda May",
+            title: "Chief Business Officer"
+          },
+          image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/3.jpg",
           children: [
-            { text: { name: "Phạm Thị Mỹ" } },
-            { text: { name: "Nguyễn Văn Đại" } }
+            {
+              text: {
+                name: "Alice Lopez",
+                title: "Chief Communications Officer"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/7.jpg"
+            },
+            {
+              text: {
+                name: "Mary Johnson",
+                title: "Chief Brand Officer"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/8.jpg"
+            },
+            {
+              text: {
+                name: "Kirk Douglas",
+                title: "Chief Business Development Officer"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/9.jpg"
+            }
           ]
         },
         {
-          text: { name: "Lê Văn Vinh + La Thị Hoa" },
+          text: {
+            name: "John Green",
+            title: "Chief Accounting Officer",
+            contact: "Tel: 01 213 123 134"
+          },
+          image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/4.jpg",
           children: [
-            { text: { name: "Phạm Thị Lợi" } },
-            { text: { name: "Lê Văn Đồng" } }
-          ]
-        },
-        {
-          text: { name: "Lê Văn Vui" },
-          children: [
-            { text: { name: "Trần Thị Tươi" } },
-            { text: { name: "Lê Thị Diệu" } }
+            {
+              text: {
+                name: "Erica Reel",
+                title: "Chief Customer Officer"
+              },
+              image: "https://raw.githubusercontent.com/bumbeishvili/org-chart/master/demo/img/10.jpg"
+            }
           ]
         }
       ]
     }
   };
 
-  new Treant(treeData);
+  new Treant(chart_config);
 </script>
 </body>
 </html>
