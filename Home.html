@@ -1,83 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Tree</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Cây Gia Phả</title>
+    <!-- Thêm Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ2Q+z+gsErxDdmIMluGOsrmqJZxg8u8cdw8E5OBqkCT5z44DAo5nm5jt7sO" crossorigin="anonymous">
     <style>
-        /* Custom styling for the family tree */
-        .family-tree {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .family-tree li {
-            margin: 20px 0;
-        }
-
-        .family-tree .node {
-            display: inline-block;
-            text-align: center;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            padding: 10px;
-            width: 150px;
-        }
-
-        .connector {
-            width: 1px;
-            height: 20px;
-            background-color: #333;
-            margin: 0 auto;
-        }
-
-        .tree-container {
+        /* Tùy chỉnh một số kiểu CSS cho cây gia phả */
+        .tree {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .node {
+            display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 20px;
         }
-
-        .generation {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .line {
+            border-left: 2px solid black;
+            height: 30px;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Family Tree</h1>
-        
-        <div class="tree-container">
-            <!-- Generation 1: Grandparents -->
-            <div class="generation">
-                <div class="node">Grandfather</div>
-                <div class="connector"></div>
-                <div class="node">Grandmother</div>
-            </div>
-            <!-- Generation 2: Parents -->
-            <div class="generation">
-                <div class="node">Father</div>
-                <div class="connector"></div>
-                <div class="node">Mother</div>
-            </div>
-            <!-- Generation 3: Children -->
-            <div class="generation">
-                <div class="node">You</div>
-                <div class="connector"></div>
-                <div class="node">Sibling 1</div>
-                <div class="connector"></div>
-                <div class="node">Sibling 2</div>
+
+    <div class="container">
+        <h1 class="text-center my-5">Cây Gia Phả</h1>
+
+        <!-- Cây Gia Phả -->
+        <div class="tree">
+            <div class="node">
+                <div class="mb-3">
+                    <h3>Ông/Bà</h3>
+                </div>
+                <div class="line"></div>
+                <div class="d-flex justify-content-around">
+                    <div class="node">
+                        <h4>Cha/Mẹ</h4>
+                        <div class="line"></div>
+                        <div class="node">
+                            <h5>Con 1</h5>
+                        </div>
+                        <div class="node">
+                            <h5>Con 2</h5>
+                        </div>
+                    </div>
+                    <div class="node">
+                        <h4>Cha/Mẹ</h4>
+                        <div class="line"></div>
+                        <div class="node">
+                            <h5>Con 3</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Thêm Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybDjjK0Xj7b1+Hid4v6bxwETRZ8z03pPpW9l6Ggk6bndCRhqu" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0w7SzmO17zWDeJ+auDabH5ozJSN4+FLzCkU16paTw2y0kL+4" crossorigin="anonymous"></script>
+
 </body>
 </html>
